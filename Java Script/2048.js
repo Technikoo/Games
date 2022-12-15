@@ -297,23 +297,23 @@ function checkdeath() {
             for (let secondindex = 0; secondindex < len; secondindex++) {
                 Gamestate[firstindex, secondindex] = value;
                 if (value == 0) { return false; }
-                if (firstindex == 0) {
-                    if (Gamestate[firstindex + 1, secondindex] == value) {
-                        return false;
-                    }
-                }
-                if (firstindex == len) {
+                if (firstindex != 0) {
                     if (Gamestate[firstindex - 1, secondindex] == value) {
                         return false;
                     }
                 }
-                if (secondindex == 0) {
-                    if (Gamestate[firstindex, secondindex + 1] == value) {
+                if (firstindex != len) {
+                    if (Gamestate[firstindex + 1, secondindex] == value) {
                         return false;
                     }
                 }
-                if (secondindex == len) {
+                if (secondindex != 0) {
                     if (Gamestate[firstindex, secondindex - 1] == value) {
+                        return false;
+                    }
+                }
+                if (secondindex != len) {
+                    if (Gamestate[firstindex, secondindex + 1] == value) {
                         return false;
                     }
                 
