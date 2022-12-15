@@ -1,0 +1,88 @@
+@media only screen 
+            and (orientation:portrait){
+                .feld{
+                    height: calc(90vw/3);
+                    width: calc(90vw/3);
+                    font-size: calc(90vw/3);
+            	    border: 3px solid rgb(0, 0, 0);
+                }
+                .container {
+                    height: 90vw;
+                    width: 90vw;
+                }
+            }
+@media only screen 
+    and (orientation:landscape){
+                .feld{
+                    height: calc(90vh/3);
+                    width: calc(90vh/3);
+                    font-size: calc(80vh/3);
+            	    border: 3px solid rgb(0, 0, 0);
+                }
+                .container {
+                    height: 90vh;
+                    width: 90vh;
+                }
+            }
+            html, body{
+                background-color: #BAD1CD;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-content: center;
+                align-items: center;
+                flex-direction: column;
+                justify-content: flex-start;
+                overflow: hidden;
+                
+            }
+            .feld {
+                background-color: #F2D1C9;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+            
+            .feld:hover {
+                background-color: rgb(107, 107, 107);
+                cursor: pointer;
+            }
+            
+            
+            .container {
+                margin: 1 auto;
+                display: grid;
+                grid-template-columns: 33% 33% 33%;
+                grid-template-rows: 33% 33% 33%;
+            }
+            h1 {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                margin: 0;
+
+            }
+            html {
+              -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                 -khtml-user-select: none; /* Konqueror HTML */
+                   -moz-user-select: none; /* Old versions of Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                        user-select: none; /* Non-prefixed version, currently
+                                              supported by Chrome, Edge, Opera and Firefox */
+            }
+            .noHover{
+                pointer-events: none;
+            }
+            #Link{
+                z-index: 4;
+                font-size: 5vh;
+                margin: 0;
+                }
+            #LinkA{
+                position: relative;
+                align-self: flex-start;
+                margin: 0;
+            }

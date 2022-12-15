@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tetris</title>
+    <script type="text/javascript" src="..\Java Script\Tetris.js"></script>
+    <link rel="stylesheet" href="..\css\Tetris.css">
+  </head>
+  
+  <body id="body"scroll="no" onclick="restart();Start();">
+  <a href="../index.html"id="LinkA">
+    <p id="Link">&larr;</p>
+  </a>
+  <div id="inps">
+    <div id="left" class="inp" onclick="rotate(false)"></div>
+    <div id="right"class="inp"onclick="rotate(true)"></div>
+  </div>
+  <img id="Img" src="..\images\Pause2.jpg" onClick="pause()" />
+  <h1 id="h1"></h1>
+  <h1 id="state"></h1>
+  <h1 id="instruction"></h1>
+  <h4 id="Keys"></h4>
+  <h2 id="Gameover"></h2>
+  <div id="Pause" class="overlay Pause"></div>
+  <div id="Fill" class="overlay fill"></div>
+      <div id="container" class="flex-container">
+      <canvas width="120" height="120" id="Store"></canvas>
+      <canvas width="500" height="1050" id="game"></canvas>
+      <canvas width="120" height="420" id="next_Figurs"></canvas>
+   </div>
+      <div id="Texte">
+        <div id="Punkte" class="text">Punkte</div>
+        <div id="Level" class="text">Level</div>
+      </div>
+</body>
+
+</html>

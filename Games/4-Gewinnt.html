@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>4-Gewinnt</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='../Java Script/4-Gewinnt.js'></script>
+    <link rel="stylesheet" href="../css/4-Gewinnt.css">
+
+</head>
+<body>
+    <a href="../index.html"id="LinkA">
+        <p id="Link">&larr;</p>
+    </a>
+    <h1 id="h1"></h1>
+    <div id="game">
+        <div class="colum">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(0)" class="feld" id="0|0">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(0)" class="feld" id="0|1">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(0)" class="feld" id="0|2">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(0)" class="feld" id="0|3">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(0)" class="feld" id="0|4">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(0)" class="feld" id="0|5">
+        </div>
+        <div class="colum">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(1)" class="feld" id="1|0">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(1)" class="feld" id="1|1">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(1)" class="feld" id="1|2">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(1)" class="feld" id="1|3">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(1)" class="feld" id="1|4">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(1)" class="feld" id="1|5">
+        </div>
+        <div class="colum">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(2)" class="feld" id="2|0">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(2)" class="feld" id="2|1">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(2)" class="feld" id="2|2">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(2)" class="feld" id="2|3">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(2)" class="feld" id="2|4">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(2)" class="feld" id="2|5">
+        </div>
+        <div class="colum">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(3)" class="feld" id="3|0">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(3)" class="feld" id="3|1">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(3)" class="feld" id="3|2">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(3)" class="feld" id="3|3">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(3)" class="feld" id="3|4">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(3)" class="feld" id="3|5">
+        </div>
+        <div class="colum">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(4)" class="feld" id="4|0">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(4)" class="feld" id="4|1">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(4)" class="feld" id="4|2">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(4)" class="feld" id="4|3">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(4)" class="feld" id="4|4">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(4)" class="feld" id="4|5">
+        </div>
+        <div class="colum">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(5)" class="feld" id="5|0">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(5)" class="feld" id="5|1">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(5)" class="feld" id="5|2">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(5)" class="feld" id="5|3">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(5)" class="feld" id="5|4">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(5)" class="feld" id="5|5">
+        </div>
+        <div class="colum">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(6)" class="feld" id="6|0">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(6)" class="feld" id="6|1">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(6)" class="feld" id="6|2">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(6)" class="feld" id="6|3">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(6)" class="feld" id="6|4">
+            <img draggable="false" src="..\images\leer.gif" onclick="click_event(6)" class="feld" id="6|5">
+        </div>
+    </div>
+</body>
+</html>

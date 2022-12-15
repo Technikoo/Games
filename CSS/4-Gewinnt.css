@@ -1,0 +1,72 @@
+@media only screen 
+    and (orientation:portrait){
+        .feld{
+            height: calc(95vw/7);
+            width: calc(95vw/7);
+        }
+        .container {
+            height: 95vw;
+            width: 95vw;
+        }
+    }
+@media only screen 
+    and (orientation:landscape){
+        .feld{
+        height: calc(95vh/7);
+        width: calc(95vh/7);
+        }
+        .container {
+            height: 95vh;
+            width: 95vh;
+        }
+    }
+       html, body{
+           background-color: #BAD1CD;
+           margin: 0;
+           padding: 0;
+           height: 100%;
+           width: 100%;
+           display: flex;
+           align-content: center;
+           align-items: center;
+           flex-direction: column;
+           justify-content: center;
+           overflow: hidden;
+           
+       }
+       html {
+              -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                 -khtml-user-select: none; /* Konqueror HTML */
+                   -moz-user-select: none; /* Old versions of Firefox */
+                    -ms-user-select: none; /* Internet Explorer/Edge */
+                        user-select: none; /* Non-prefixed version, currently
+                                              supported by Chrome, Edge, Opera and Firefox */
+            }
+#game{
+    display: flex;
+}
+.colum{
+    display: flex;
+    flex-direction: column;
+}
+.feld{
+    cursor: pointer;
+}
+#h1{
+    color: rgb(255, 0, 0);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+#Link{
+    z-index: 4;
+    font-size: 5vh;
+    margin: 0;
+    }
+#LinkA{
+    position: relative;
+    align-self: flex-start;
+    margin: 0;
+}

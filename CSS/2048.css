@@ -1,0 +1,134 @@
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        overflow: hidden; 
+        background-color: #BAD1CD;
+        display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+      }    
+    .game{
+        
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 25% 25% 25% 25%;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+    @media only screen
+    and (orientation:portrait) {
+        #h1{
+            font-size: 10vw;
+        }
+        .feld{
+            font-size: 5em;
+        }
+        table{
+            width: 	100%;
+            height: 100%;
+            display: flex;
+            border-spacing: 0px;
+        }
+        tr{
+            display: flex;    
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+        }
+        #Gametd{
+            width: 99vw;
+            height: 99vw;
+        }
+        #Scoretd{
+            width: 9vw;
+        }
+    }
+    @media only screen
+    and (orientation:landscape) {
+
+        .game{
+            max-width: 90vh;
+            max-height: 90vh;
+            text-align: center;
+            width: 100%;
+        }
+        #h1{
+            font-size: 7vh;
+        }
+        .feld{
+            font-size: 5em;
+        }
+        table{
+            width: 	100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            border-spacing: 0px;
+        }
+        tr{
+            display: flex;
+            
+    justify-content: center;
+
+        }
+        #Gametd{
+            width: 80vh;
+            height: 80vh;
+        }
+        #Scoretd{
+            width: 9vh;
+            height: 9vh;
+        }
+    }
+    .feld{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        background-color: white;
+        }
+    body {
+        margin: 0;
+    }
+    #h1{
+        text-align: center;
+        top: 0;
+        width: 1000%;
+        height: auto;
+        margin: 0;
+    }
+    html {
+        -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+           -khtml-user-select: none; /* Konqueror HTML */
+             -moz-user-select: none; /* Old versions of Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+                  user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome, Edge, Opera and Firefox */
+      }
+      #Link{
+        z-index: 4;
+        font-size: 5vh;
+        margin: 0;
+        text-decoration: underline none;
+        }
+    #LinkA{
+        position: relative;
+        align-self: flex-start;
+        margin: 0;
+    }
+    H3{
+        margin: 0;
+        padding: 0;
+        font-size: large;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        padding: 10px;
+    }
+    tbody,tr{
+        width: 	100vw;
+        height: 100vh;
+    }
