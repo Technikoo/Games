@@ -102,7 +102,7 @@ function new_Block() {
     let val = (0 == Math.floor(Math.random() * 4)) ? 4 : 2
     Gamestate[y][x] = val
     setTimeout(function () { update(); }, 200);
-    if (checkdeath)
+    if (checkdeath()) Gameover();
 
 
 function Gameover() {
@@ -295,7 +295,7 @@ function checkdeath() {
         let value
         for (let firstindex = 0; firstindex < len; firstindex++) {
             for (let secondindex = 0; secondindex < len; secondindex++) {
-                Gamestate[firstindex, secondindex] = value;
+              value = Gamestate[firstindex, secondindex];
                 if (value == 0) { return false; }
                 if (firstindex != 0) {
                     if (Gamestate[firstindex - 1, secondindex] == value) {
