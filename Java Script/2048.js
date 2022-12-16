@@ -102,9 +102,8 @@ function new_Block() {
     let val = (0 == Math.floor(Math.random() * 4)) ? 4 : 2
     Gamestate[y][x] = val
     setTimeout(function () { update(); }, 200);
-    if (checkdeath()) Gameover();
-
-
+    if (checkdeath()==true) {Gameover();}
+}
 function Gameover() {
     console.log("Gameover")
     
@@ -115,7 +114,6 @@ function Gameover() {
     }
     write("Highscore2048", Highscore)
 
-}
 }
 function right() {
         let moved = false
