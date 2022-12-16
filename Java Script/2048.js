@@ -48,6 +48,7 @@ function loadProgress(Savefile){
     update()
 }
 function update(){
+    if (checkdeath()==true) {Gameover();}
     document.getElementById("Score").innerText = "Score:\n"+String(Points);
     document.getElementById("Highscore").innerText= "Highscore:\n"+Highscore.toString(10);
     Gamestate.forEach((useless,firstIndex)=>{
@@ -102,7 +103,7 @@ function new_Block() {
     let val = (0 == Math.floor(Math.random() * 4)) ? 4 : 2
     Gamestate[y][x] = val
     setTimeout(function () { update(); }, 200);
-    if (checkdeath()==true) {Gameover();}
+    
 }
 function Gameover() {
     console.log("Gameover")
