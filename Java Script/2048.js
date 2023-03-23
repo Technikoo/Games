@@ -36,18 +36,19 @@ function loadProgress(Savefile){
     for (let index = 0; index < Savefile.length; index++) {
         value = Savefile[index]    
         if (value == ";") {
-            PreGamestate.add(parseInt(tempValue))
+            PreGamestate.push(parseInt(tempValue))
             tempValue = ""
         }
         else {
-            tempValue.add(value)
+            tempValue=tempValue+value
         }
     }
-    Gamestate = PreGamestate
+    Gamestate = [[PreGamestate[0],PreGamestate[1],PreGamestate[2],PreGamestate[3]],[PreGamestate[4],PreGamestate[5],PreGamestate[6],PreGamestate[7]],[PreGamestate[8],PreGamestate[9],PreGamestate[10],PreGamestate[11]],[PreGamestate[12],PreGamestate[13],PreGamestate[14],PreGamestate[15]]]
     points = parseInt(tempValue)
     update()
 }
 function update(){
+    if (checkdeath()==true){Gameover()}
     document.getElementById("Score").innerText = "Score:\n"+String(Points);
     document.getElementById("Highscore").innerText= "Highscore:\n"+Highscore.toString(10);
     Gamestate.forEach((useless,firstIndex)=>{
@@ -101,10 +102,9 @@ function new_Block() {
     let x = FreeSpaces[rand][1]
     let val = (0 == Math.floor(Math.random() * 4)) ? 4 : 2
     Gamestate[y][x] = val
-    setTimeout(function () { update(); }, 200);
-    if (checkdeath)
-
-
+    setTimeout(function () {update(); }, 200);
+    
+}
 function Gameover() {
     console.log("Gameover")
     
@@ -115,7 +115,6 @@ function Gameover() {
     }
     write("Highscore2048", Highscore)
 
-}
 }
 function right() {
         let moved = false
@@ -295,25 +294,25 @@ function checkdeath() {
         let value
         for (let firstindex = 0; firstindex < len; firstindex++) {
             for (let secondindex = 0; secondindex < len; secondindex++) {
-                Gamestate[firstindex, secondindex] = value;
+                value = Gamestate[firstindex][secondindex];
                 if (value == 0) { return false; }
                 if (firstindex != 0) {
-                    if (Gamestate[firstindex - 1, secondindex] == value) {
+                    if (Gamestate[firstindex - 1][secondindex] == value) {
                         return false;
                     }
                 }
                 if (firstindex != len) {
-                    if (Gamestate[firstindex + 1, secondindex] == value) {
+                    if (Gamestate[firstindex + 1][secondindex] == value) {
                         return false;
                     }
                 }
                 if (secondindex != 0) {
-                    if (Gamestate[firstindex, secondindex - 1] == value) {
+                    if (Gamestate[firstindex][secondindex - 1] == value) {
                         return false;
                     }
                 }
                 if (secondindex != len) {
-                    if (Gamestate[firstindex, secondindex + 1] == value) {
+                    if (Gamestate[firstindex][secondindex + 1] == value) {
                         return false;
                     }
                 

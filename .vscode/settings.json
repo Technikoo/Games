@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "10.8.193.5",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "GyleInf",
+            "database": "GyleInf",
+            "username": "GyleInf",
+            "password": "GyleInf"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "GyleInf",
+            "database": "GyleInf",
+            "username": "GyleInf",
+            "password": "GyleInf"
+        }
+    ]
+}
