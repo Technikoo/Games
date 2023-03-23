@@ -9,14 +9,20 @@ function init(){
             Gamestate[Breite].push(0)
     }}
     new_Block();new_Block();
+    if(read("Localsavefile") != null){
+        loadProgress(read("Localsavefile"))}
+    
 }
 function read(Name) {
     if (localStorage.getItem(Name)===null) {
-        return 0}
+        return null}
     return localStorage.getItem(Name);
 }
 function write(Name,text) {
     localStorage.setItem(Name, text);
+}
+function löschen(Name){ //delete ist reserviert...
+    localStorage.removeItem(Name) 
 }
 function saveProgress(){
     Ergebnis = ""
@@ -44,7 +50,7 @@ function loadProgress(Savefile){
         }
     }
     Gamestate = [[PreGamestate[0],PreGamestate[1],PreGamestate[2],PreGamestate[3]],[PreGamestate[4],PreGamestate[5],PreGamestate[6],PreGamestate[7]],[PreGamestate[8],PreGamestate[9],PreGamestate[10],PreGamestate[11]],[PreGamestate[12],PreGamestate[13],PreGamestate[14],PreGamestate[15]]]
-    points = parseInt(tempValue)
+    Points = parseInt(tempValue)
     update()
 }
 function update(){
@@ -67,12 +73,18 @@ function update(){
             }
             else if(value <= 1024){
                 document.getElementById(String(index+1)).style.backgroundColor = "#ff00"+((value/4)-1).toString(16);
+                document.getElementById(String(index+1)).style.fontSize = "15vh";
+            }
+            else if(value == 1024){
+                document.getElementById(String(index+1)).style.backgroundColor = "#ff00"+((value/4)-1).toString(16);
+                document.getElementById(String(index+1)).style.fontSize = "12vh";
             }
             else if(value <= 2048){
                 document.getElementById(String(index+1)).style.backgroundColor = "#aaffaa";
+                document.getElementById(String(index+1)).style.fontSize = "8vh";
             }
             else {
-                document.getElementById(String(index+1)).style.backgroundColor = "#000000";
+                document.getElementById(String(index+1)).style.backgroundColor = "#111111";
             }
             })
     })
@@ -163,6 +175,7 @@ function right() {
         update();
         if (moved == false) {return;}
         new_Block();
+        write("Localsavefile",saveProgress())
     }
 function left() {
         let moved = false
@@ -202,6 +215,7 @@ function left() {
         update();
         if (moved == false) {return; }
         new_Block();
+        write("Localsavefile",saveProgress())
     }//<=3   !4  0,1,2,3
     // <=12   !16 0,4,8,12
 function up() {
@@ -245,6 +259,7 @@ function up() {
         update();
         if (moved == false) {return; }
         new_Block();
+        write("Localsavefile",saveProgress())
     }
 function down() {
         let moved = false;
@@ -262,11 +277,11 @@ function down() {
                             alreadymearged = 0;
                             break;
                         }
-                        alreadymearged = ((index + 1) + 1) * ((firstIndex) + 1);
-
+                        
                         value = value * 2;
                         Gamestate[index + 1][firstIndex] = value;
                         Gamestate[index][firstIndex] = 0;
+                        alreadymearged = ((index + 1) + 1) * ((firstIndex) + 1);
                         index--;
                         moved = true;
                         Points = Points+value*2
@@ -288,12 +303,13 @@ function down() {
         update();
         if (moved == false) {; return; }
         new_Block();
+        write("Localsavefile",saveProgress())
     }
 function checkdeath() {
         let len = Gamestate.length - 1
         let value
-        for (let firstindex = 0; firstindex < len; firstindex++) {
-            for (let secondindex = 0; secondindex < len; secondindex++) {
+        for (let firstindex = 0; firstindex < len+1; firstindex++) {
+            for (let secondindex = 0; secondindex < len+1; secondindex++) {
                 value = Gamestate[firstindex][secondindex];
                 if (value == 0) { return false; }
                 if (firstindex != 0) {
@@ -322,6 +338,7 @@ function checkdeath() {
             }
         
         }
+        löschen("Localsavefile")
         return true;
 
     }
