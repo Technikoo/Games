@@ -136,8 +136,10 @@ function Gameover() {
 }
 
 function Resume() {
-
-
+    document.body.style.backgroundColor = "";
+    document.getElementById("h1").innerHTML="2048"
+    document.getElementById("h3").innerHTML=""
+    init()
 }
 
 function right() {
