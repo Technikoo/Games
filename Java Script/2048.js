@@ -409,9 +409,10 @@ function checkdeath() {
     };
 
 document.addEventListener("keydown", (e) => {
-        if(Gameoverstate == true){Resume()}
-        if (e.code === "ArrowDown" | e.code === "KeyS") { down() };
-        if (e.code === "ArrowUp" | e.code === "KeyW") { up() };
-        if (e.code === "ArrowLeft" | e.code === "KeyA") { left() };
-        if (e.code === "ArrowRight" | e.code === "KeyD") { right() };
+        
+        if (e.code === "ArrowDown" | e.code === "KeyS") { down() }
+        else if (e.code === "ArrowUp" | e.code === "KeyW") { up() }
+        else if (e.code === "ArrowLeft" | e.code === "KeyA") { left() }
+        else if (e.code === "ArrowRight" | e.code === "KeyD") { right() }
+        else if(Gameoverstate == true){Resume()}
     })
