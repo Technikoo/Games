@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => init())
 function init(){
     Highscore = read("Highscore2048")
-    if(Highscore == null){Highscore = 0}
+    if(Highscore == null){Highscore = "0"}
     Gamestate=[];
     Points = 0;
     for(let Breite=0;Breite<4;Breite++){
@@ -12,6 +12,7 @@ function init(){
     new_Block();new_Block();
     if(read("Localsavefile") != null){
         loadProgress(read("Localsavefile"))}
+    Gameover = false;
     
 }
 function read(Name) {
@@ -129,9 +130,16 @@ function Gameover() {
     }
     write("Highscore2048", Highscore)
     document.getElementById("h1").innerHTML="Gameover"
+    document.getElementById("h3").innerHTML="Drücke Irgndetwas zum Neustarten"
     document.body.style.backgroundColor = "red";
+    Gameover = true;
+}
+
+function Resume() {
+
 
 }
+
 function right() {
         let moved = false
         let firstIndex;
@@ -367,7 +375,9 @@ function checkdeath() {
         if ( ! xDown || ! yDown ) {
             return;
         }
-    
+        
+        if(Gameover == true){Resume()}
+
         var xUp = evt.touches[0].clientX;                                    
         var yUp = evt.touches[0].clientY;
     
@@ -397,6 +407,7 @@ function checkdeath() {
     };
 
 document.addEventListener("keydown", (e) => {
+        if(Gameover == true){Resume()}
         if (e.code === "ArrowDown" | e.code === "KeyS") { down() };
         if (e.code === "ArrowUp" | e.code === "KeyW") { up() };
         if (e.code === "ArrowLeft" | e.code === "KeyA") { left() };
