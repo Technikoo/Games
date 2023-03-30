@@ -120,7 +120,7 @@ function new_Block() {
 }
 function Gameover() {
     console.log("Gameover")
-    
+    löschen("Localsavefile")
     Highscore = read("Highscore2048");
     if(Highscore == null){Highscore = 0}
     if (parseInt(Highscore) < Points){
@@ -128,6 +128,8 @@ function Gameover() {
         write(String(Highscore));
     }
     write("Highscore2048", Highscore)
+    document.getElementById("h1").innerHTML="Gameover"
+    document.body.style.backgroundColor = "red";
 
 }
 function right() {
@@ -340,7 +342,6 @@ function checkdeath() {
             }
         
         }
-        löschen("Localsavefile")
         return true;
 
     }
