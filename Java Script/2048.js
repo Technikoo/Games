@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => init())
 function init(){
     Highscore = read("Highscore2048")
+    if(Highscore == null){Highscore = 0}
     Gamestate=[];
     Points = 0;
     for(let Breite=0;Breite<4;Breite++){
