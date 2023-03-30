@@ -122,6 +122,7 @@ function Gameover() {
     console.log("Gameover")
     
     Highscore = read("Highscore2048");
+    if(Highscore == null){Highscore = 0}
     if (parseInt(Highscore) < Points){
         Highscore = Points;
         write(String(Highscore));
