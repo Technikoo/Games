@@ -12,7 +12,7 @@ function init(){
     new_Block();new_Block();
     if(read("Localsavefile") != null){
         loadProgress(read("Localsavefile"))}
-    Gameover = false;
+    Gameoverstate = false;
     
 }
 function read(Name) {
@@ -132,7 +132,7 @@ function Gameover() {
     document.getElementById("h1").innerHTML="Gameover"
     document.getElementById("h3").innerHTML="Drücke Irgndetwas zum Neustarten"
     document.body.style.backgroundColor = "red";
-    Gameover = true;
+    Gameoverstate = true;
 }
 
 function Resume() {
@@ -376,7 +376,7 @@ function checkdeath() {
             return;
         }
         
-        if(Gameover == true){Resume()}
+        if(Gameoverstate == true){Resume()}
 
         var xUp = evt.touches[0].clientX;                                    
         var yUp = evt.touches[0].clientY;
@@ -407,7 +407,7 @@ function checkdeath() {
     };
 
 document.addEventListener("keydown", (e) => {
-        if(Gameover == true){Resume()}
+        if(Gameoverstate == true){Resume()}
         if (e.code === "ArrowDown" | e.code === "KeyS") { down() };
         if (e.code === "ArrowUp" | e.code === "KeyW") { up() };
         if (e.code === "ArrowLeft" | e.code === "KeyA") { left() };
