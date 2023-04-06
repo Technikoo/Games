@@ -46,8 +46,9 @@
  if ($result->num_rows > 0) {
  echo '<tr><td>Platzierung</td><td>Highscore</td><td>Name</td></tr>';
  // output data of each row
- while($row = $result->fetch_assoc()&&$result->num_rows <= 3) {
+ if($row = $result->fetch_assoc()) {
  echo "<tr><th id='first'>1.</th><td>" . $row["Highscore"]. "</td><td>" . $row["name"]."</td></tr>";
+ echo "<tr><th id='second'>2.</th><td>" . $row["Highscore"]. "</td><td>" . $row["name"]."</td></tr>";
  }
  } else {
  echo "0 results";
