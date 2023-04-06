@@ -10,10 +10,10 @@ CREATE TABLE `Game` (
 
 
 INSERT INTO `Game` (`Name`) VALUES
-'Tetris',
-'TicTacToe',
-'VierGewinnt',
-'2048';
+('Tetris'),
+('TicTacToe'),
+('VierGewinnt'),
+('2048');
 
 CREATE TABLE `User` (
   ID INT AUTO_INCREMENT NOT NULL,
