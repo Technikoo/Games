@@ -47,7 +47,7 @@
  echo '<tr><td>Platzierung</td><td>Highscore</td><td>Name</td></tr>';
  // output data of each row
  while($row = $result->fetch_assoc()&& $row<=3) {
- echo "<tr><th id="first">1.</th><td>" . $row["ug.Highscore"]. "</td><td>" . $row["u.name"]."</td></tr>";
+ echo "<tr><th id='first'>1.</th><td>" . $row["ug.Highscore"]. "</td><td>" . $row["u.name"]."</td></tr>";
  }
  } else {
  echo "0 results";
