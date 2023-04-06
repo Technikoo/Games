@@ -9,11 +9,11 @@ CREATE TABLE `Game` (
 ) ENGINE=InnoDB ;
 
 
-INSERT INTO `Game` (`ID`, `Name`) VALUES
-(1, 'Tetris'),
-(2,'TicTacToe'),
-(3,'VierGewinnt'),
-(4,'2048');
+INSERT INTO `Game` `Name` VALUES
+'Tetris',
+'TicTacToe',
+'VierGewinnt',
+'2048';
 
 CREATE TABLE `User` (
   ID INT AUTO_INCREMENT NOT NULL,
