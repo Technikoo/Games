@@ -10,7 +10,7 @@
         </head>
 
         <body>
-        <a id="User" class="User">
+        <a id="User" href="user.php" class="User">
           <img src="/images/User.png" alt="User">
         </a>
           <div class="Containers">
