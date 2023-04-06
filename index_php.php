@@ -10,6 +10,7 @@
         </head>
 
         <body>
+        <div id="User" class="User"></div>
           <div class="Containers">
           <h1>Tetris</h1> 
           <div class="imgs">
