@@ -10,7 +10,9 @@
         </head>
 
         <body>
-        <div id="User" class="User"></div>
+        <a id="User" class="User">
+          <img src="/images/User.png" alt="User">
+        </a>
           <div class="Containers">
           <h1>Tetris</h1> 
           <div class="imgs">
