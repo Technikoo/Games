@@ -9,7 +9,7 @@ CREATE TABLE `Game` (
 ) ENGINE=InnoDB ;
 
 
-INSERT INTO `Game` `Name` VALUES
+INSERT INTO `Game` (`Name`) VALUES
 'Tetris',
 'TicTacToe',
 'VierGewinnt',
