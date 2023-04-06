@@ -11,6 +11,10 @@
           width: 98%;
           height: 98%;
         }
+        .User{
+          width: 5vw;
+          height: 5vw;
+        }
     }
     @media only screen 
     and (orientation:landscape){
@@ -24,6 +28,10 @@
         }
         .Containers {
           width: calc((100%/var(--Img)));
+        }
+        .User{
+          width: 5vh;
+          height: 5vh;
         }
     }
     
@@ -153,7 +161,7 @@
     }
     .User{
       position: fixed;
-      bottom: 0;
+      top: 0;
       right: 0;
       z-index: 4;
     }
