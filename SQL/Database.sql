@@ -18,6 +18,7 @@ INSERT INTO `Game` (`Name`) VALUES
 CREATE TABLE `User` (
   ID INT AUTO_INCREMENT NOT NULL,
   `Name` varchar(20) NOT NULL,
+  `Password` varchar(20) NOT NULL,
   PRIMARY KEY(ID)
 ) ENGINE=InnoDB ;
 
