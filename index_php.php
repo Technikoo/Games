@@ -39,7 +39,7 @@
  die("Connection failed: " . $conn->connect_error);
  } 
  
-  $result = $conn->query("SELECT u.name, g.name, ug.Dauer, ug.Highscore FROM game AS g, user AS u,usergame AS ug
+  $result = $conn->query("SELECT u.name, ug.Highscore FROM game AS g, user AS u,usergame AS ug
   WHERE ug.UserID = u.ID 
   AND ug.GameID = g.ID
   AND g.ID = 1 ORDER BY Highscore DESC");
