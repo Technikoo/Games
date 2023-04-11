@@ -12,11 +12,21 @@ $servername = "localhost";
  } 
  
   $resultpw = $conn->query("SELECT password From user
-  Where name = '"$_GET["Uname"]"'");
-  if ($resultpw==$_GET["Pw"]) {
+  Where name = '".$_GET["Uname"]."'");
+  if ($row = $resultpw->fetch_assoc()) {
+  if ($row["password"]==$_GET["Pw"]) {
     echo "accsess granted";
+    $cookie_name = "user";
+    $cookie_value = $_GET["Uname"];
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+    $cookie_name = "password";
+    $cookie_value = $_GET["Pw"];
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
   } else echo "accsess denied";
- }
+}
+ } catch (Exception $e) {
+   echo 'and the error is: ', $e->getMessage(), "\n";
+  }
   $conn->close();
 ?>
 

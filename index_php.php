@@ -11,6 +11,33 @@
 
         <body>
         <a id="User" href="user.php" class="User">
+        <?php 
+        if (!isset($_COOKIE["user"])) {
+          $img="/images/User.png";
+        } else {
+        $servername = "localhost";
+ $username = "Games";
+ $password = "Games";
+ $dbname = "Games";
+ try {
+ $conn = new mysqli($servername, $username, $password, $dbname);
+ if ($conn->connect_error) {
+ die("Connection failed: " . $conn->connect_error);
+ } 
+ 
+  $resultpw = $conn->query("SELECT password From user
+  Where name = '".$_COOKIE["user"]."'");
+  if ($row = $resultpw->fetch_assoc()) {
+  if ($row["password"]==$_COOKIE["password"]) {
+    $img="/images/LogedIn.png";
+    } else $img="/images/User.png";
+}
+ } catch (Exception $e) {
+   echo 'and the error is: ', $e->getMessage(), "\n";
+  }
+  $conn->close();}
+        echo "<img src='".$img."' alt='User'>";
+        ?>
           <img src="/images/User.png" alt="User">
         </a>
           <div class="Containers">
