@@ -22,7 +22,7 @@ $servername = "localhost";
     $cookie_name = "password";
     $cookie_value = $_GET["Pw"];
     setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-  } else echo "accsess denied";
+  } else  header('Location: user.php');
 }
  } catch (Exception $e) {
    echo 'and the error is: ', $e->getMessage(), "\n";

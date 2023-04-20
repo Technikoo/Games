@@ -80,6 +80,8 @@
  echo "<tr><th id='first'>1.</th><td>" . $row["Highscore"]. "</td><td>" . $row["name"]."</td></tr>";
  $row = $result->fetch_assoc();
  echo "<tr><th id='second'>2.</th><td>" . $row["Highscore"]. "</td><td>" . $row["name"]."</td></tr>";
+ $row = $result->fetch_assoc();
+ echo "<tr><th id='third'>3.</th><td>" . $row["Highscore"]. "</td><td>" . $row["name"]."</td></tr>";
  }
  } else {
  echo "0 results";
