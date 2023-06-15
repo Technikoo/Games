@@ -21,10 +21,6 @@ html, body {
     touch-action:none
     
   }
-
-  canvas {
-    border: 1px solid white;
-  }
   .flex-container{
     display: flex;
     align-items: flex-start;
